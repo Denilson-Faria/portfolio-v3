@@ -36,23 +36,23 @@ export default function FormacaoSection() {
   ];
 
   return (
-    <section id="formation" className="py-16 md:py-24 px-6">
+    <section id="formation" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div 
           ref={headerRef}
-          className="scroll-fade-up text-center mb-16"
+          className="scroll-fade-up text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
             Formações <span className="bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-600 bg-clip-text text-transparent">acadêmicas</span>
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 text-lg">
+          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 px-4">
             Minha base acadêmica e aprendizado contínuo
           </p>
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
           {formacoes.map((formacao, index) => {
             const IconeComponent = formacao.icone;
             const delayClass = `delay-${(index + 2) * 100}`;
@@ -61,7 +61,7 @@ export default function FormacaoSection() {
               <div
                 key={formacao.id}
                 ref={formacao.ref}
-                className={`scroll-fade-up ${delayClass} group relative backdrop-blur-sm bg-white/80 dark:bg-transparent rounded-2xl p-8 border border-gray-200 dark:border-purple-500/20 hover:border-gray-300 dark:hover:border-purple-400/40 transition-all duration-300 hover:transform hover:scale-[1.02] shadow-sm dark:shadow-none`}
+                className={`scroll-fade-up ${delayClass} group relative backdrop-blur-sm bg-white/80 dark:bg-transparent rounded-2xl p-6 sm:p-8 border border-gray-200 dark:border-purple-500/20 hover:border-gray-300 dark:hover:border-purple-400/40 transition-all duration-300 hover:transform hover:scale-[1.02] shadow-sm dark:shadow-none`}
               >
                 {/* Glow effect on hover */}
                 <div className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${formacao.cor} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
@@ -69,17 +69,17 @@ export default function FormacaoSection() {
                 {/* Content */}
                 <div className="relative z-10">
                   {/* Ícone e Ano */}
-                  <div className="flex items-start justify-between mb-6">
-                    <div className={`p-3 rounded-xl bg-gradient-to-br ${formacao.cor}`}>
-                      <IconeComponent className="w-6 h-6 text-white" />
+                  <div className="flex items-start justify-between mb-6 gap-4">
+                    <div className={`p-2.5 sm:p-3 rounded-xl bg-gradient-to-br ${formacao.cor} flex-shrink-0`}>
+                      <IconeComponent className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                     </div>
                     
                     <div className="text-right">
-                      <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-sm mb-2">
-                        <Calendar className="w-4 h-4" />
+                      <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-xs sm:text-sm mb-2 justify-end">
+                        <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                         <span>{formacao.ano}</span>
                       </div>
-                      <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">
+                      <span className="inline-block px-2.5 sm:px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">
                         {formacao.status}
                       </span>
                     </div>
@@ -93,18 +93,18 @@ export default function FormacaoSection() {
                   </div>
 
                   {/* Título */}
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3">
                     {formacao.titulo}
                   </h3>
 
                   {/* Instituição */}
                   <div className="flex items-center gap-2 mb-4 text-purple-600 dark:text-purple-400">
-                    <BookOpen className="w-4 h-4" />
-                    <span className="font-medium">{formacao.instituicao}</span>
+                    <BookOpen className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" />
+                    <span className="font-medium text-sm sm:text-base">{formacao.instituicao}</span>
                   </div>
 
                   {/* Descrição */}
-                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-sm sm:text-base">
                     {formacao.descricao}
                   </p>
                 </div>

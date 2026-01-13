@@ -12,7 +12,7 @@ export default function About() {
     const cards = [
         {
             icon: (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -29,7 +29,7 @@ export default function About() {
         },
         {
             icon: (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -46,7 +46,7 @@ export default function About() {
         },
         {
             icon: (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <circle cx="12" cy="12" r="10" strokeWidth="2" />
                     <circle cx="12" cy="12" r="6" strokeWidth="2" />
                     <circle cx="12" cy="12" r="2" strokeWidth="2" />
@@ -90,36 +90,36 @@ export default function About() {
     return (
         <section
             id="about"
-            className="relative isolate py-16 md:py-24"
+            className="relative isolate py-16 md:py-24 px-4 sm:px-6 lg:px-8"
         >
-            <div className="relative z-10 max-w-5xl mx-auto px-4 w-full space-y-20">
+            <div className="relative z-10 max-w-5xl mx-auto w-full space-y-12 sm:space-y-16 md:space-y-20">
 
                 {/* HEADER */}
                 <div 
                     ref={headerRef}
                     className="scroll-fade-up text-center"
                 >
-                    <h2 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4">
+                    <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
                         Quem sou{" "}
                         <span className="bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
                             eu
                         </span>
                     </h2>
-                    <p className="text-gray-600 dark:text-gray-400 text-lg">
+                    <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 px-4">
                         Desenvolvedor, criador de soluções e entusiasta de café ☕
                     </p>
                 </div>
 
                 <div 
                     ref={mainCardRef}
-                    className="scroll-fade-up delay-200 p-8 rounded-3xl backdrop-blur-xl bg-white/80 dark:bg-transparent border border-gray-200 dark:border-purple-500/20 hover:border-gray-300 dark:hover:border-purple-400/40 transition-all duration-500 hover:shadow-xl shadow-sm dark:shadow-none dark:hover:shadow-purple-500/10"
+                    className="scroll-fade-up delay-200 p-6 sm:p-8 rounded-3xl backdrop-blur-xl bg-white/80 dark:bg-transparent border border-gray-200 dark:border-purple-500/20 hover:border-gray-300 dark:hover:border-purple-400/40 transition-all duration-500 hover:shadow-xl shadow-sm dark:shadow-none dark:hover:shadow-purple-500/10"
                 >
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 items-center">
 
                         {/* FOTO */}
                         <div className="flex justify-center md:justify-start">
                             <div
-                                className="relative z-20 group p-3 rounded-3xl
+                                className="relative z-20 group p-2 sm:p-3 rounded-3xl
                 backdrop-blur-sm
                 border border-purple-500/30
                 hover:border-purple-400/50
@@ -135,7 +135,7 @@ export default function About() {
                                 />
 
                                 {/* Imagem */}
-                                <div className="relative w-36 h-36 lg:w-40 lg:h-40 rounded-2xl overflow-hidden ring-1 ring-purple-500/30">
+                                <div className="relative w-32 h-32 sm:w-36 sm:h-36 lg:w-40 lg:h-40 rounded-2xl overflow-hidden ring-1 ring-purple-500/30">
                                     <img
                                         src="/img/foto1.png"
                                         alt="Denilson Faria"
@@ -147,8 +147,8 @@ export default function About() {
                         </div>
 
                         {/* TEXTO */}
-                        <div className="md:col-span-2 space-y-4 text-gray-700 dark:text-gray-300">
-                            <p className="text-base lg:text-lg leading-relaxed">
+                        <div className="md:col-span-2 space-y-3 sm:space-y-4 text-gray-700 dark:text-gray-300 text-center md:text-left">
+                            <p className="text-sm sm:text-base lg:text-lg leading-relaxed">
                                 Sou desenvolvedor porque acredito que{" "}
                                 <strong className="text-transparent bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-600 bg-clip-text font-semibold">
                                     tecnologia bem feita muda vidas
@@ -157,7 +157,7 @@ export default function About() {
                                 front-end, criando experiências que fazem sentido.
                             </p>
 
-                            <p className="text-base lg:text-lg leading-relaxed">
+                            <p className="text-sm sm:text-base lg:text-lg leading-relaxed">
                                 Quando não estou codando, você vai me encontrar com um café na mão,
                                 pensando em como tornar interfaces mais intuitivas ou explorando
                                 novas tecnologias.
@@ -167,7 +167,7 @@ export default function About() {
                 </div>
 
                 {/* CARDS */}
-                <div className="grid md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
                     {cards.map((card, index) => {
                         const colors = getColorClasses(card.color);
                         const delayClass = `delay-${(index + 3) * 100}`;
@@ -175,18 +175,18 @@ export default function About() {
                             <div
                                 key={index}
                                 ref={card.ref}
-                                className={`scroll-fade-up ${delayClass} group p-6 rounded-2xl backdrop-blur-xl bg-white/80 dark:bg-transparent
+                                className={`scroll-fade-up ${delayClass} group p-5 sm:p-6 rounded-2xl backdrop-blur-xl bg-white/80 dark:bg-transparent
                   border ${colors.border} ${colors.hoverBorder}
                   transition-all duration-500
                   hover:scale-[1.02] hover:shadow-xl shadow-sm dark:shadow-none ${colors.hoverShadow}`}
                             >
-                                <div className={`w-12 h-12 rounded-xl ${colors.bg} flex items-center justify-center ${colors.text} mb-4 group-hover:scale-110 transition-all duration-300 border ${colors.border}`}>
+                                <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl ${colors.bg} flex items-center justify-center ${colors.text} mb-3 sm:mb-4 group-hover:scale-110 transition-all duration-300 border ${colors.border}`}>
                                     {card.icon}
                                 </div>
-                                <h3 className="text-gray-800 dark:text-gray-200 font-semibold text-lg mb-2 group-hover:text-gray-900 dark:group-hover:text-white transition-colors duration-300">
+                                <h3 className="text-gray-800 dark:text-gray-200 font-semibold text-base sm:text-lg mb-2 group-hover:text-gray-900 dark:group-hover:text-white transition-colors duration-300">
                                     {card.title}
                                 </h3>
-                                <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300">
+                                <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm leading-relaxed group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300">
                                     {card.description}
                                 </p>
                             </div>
@@ -203,7 +203,7 @@ export default function About() {
                         href="/curriculo.pdf" 
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-8 py-4 backdrop-blur-sm bg-gradient-to-r from-pink-500/20 via-purple-600/20 to-indigo-600/20 border border-purple-500/30 rounded-xl font-semibold text-gray-900 dark:text-white hover:from-pink-500/30 hover:via-purple-600/30 hover:to-indigo-600/30 hover:border-purple-400/50 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-300"
+                        className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 backdrop-blur-sm bg-gradient-to-r from-pink-500/20 via-purple-600/20 to-indigo-600/20 border border-purple-500/30 rounded-xl font-semibold text-sm sm:text-base text-gray-900 dark:text-white hover:from-pink-500/30 hover:via-purple-600/30 hover:to-indigo-600/30 hover:border-purple-400/50 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-300"
                     >
                         Ver currículo completo
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

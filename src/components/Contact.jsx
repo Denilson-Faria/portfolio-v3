@@ -108,26 +108,26 @@ export default function Contact() {
   const delayClasses = ['delay-300', 'delay-400', 'delay-500', 'delay-600'];
 
   return (
-    <section id="contact" className="relative py-16 md:py-24">
-      <div className="relative z-10 max-w-6xl mx-auto px-4">
+    <section id="contact" className="relative py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16">
           <h2 
             ref={titleRef}
-            className="scroll-fade-up text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4"
+            className="scroll-fade-up text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4"
           >
             Vamos <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">conversar?</span>
           </h2>
           <p 
             ref={descRef}
-            className="scroll-fade-up delay-200 text-gray-600 dark:text-gray-400 text-lg"
+            className="scroll-fade-up delay-200 text-base sm:text-lg text-gray-600 dark:text-gray-400"
           >
             Escolha o melhor canal para entrar em contato
           </p>
         </div>
 
         {/* Contact Cards Grid */}
-        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-4xl mx-auto">
           {contacts.map((contact, index) => {
             const IconComponent = contact.icon;
             const colors = getColorClasses(contact.color);
@@ -140,29 +140,29 @@ export default function Contact() {
                 target={contact.id === 1 ? undefined : "_blank"}
                 rel={contact.id === 1 ? undefined : "noopener noreferrer"}
                 onClick={contact.onClick}
-                className={`scroll-fade-up ${delayClasses[index]} group relative p-8 rounded-2xl backdrop-blur-xl bg-white/80 dark:bg-transparent border ${colors.border} ${colors.hoverBorder} transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl shadow-sm dark:shadow-none ${colors.shadow} flex items-center gap-6 ${contact.id === 1 ? 'cursor-pointer' : ''}`}
+                className={`scroll-fade-up ${delayClasses[index]} group relative p-6 sm:p-8 rounded-2xl backdrop-blur-xl bg-white/80 dark:bg-transparent border ${colors.border} ${colors.hoverBorder} transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl shadow-sm dark:shadow-none ${colors.shadow} flex items-center gap-4 sm:gap-6 ${contact.id === 1 ? 'cursor-pointer' : ''}`}
               >
                 {/* Glow effect on hover */}
                 <div className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${contact.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
                 
                 {/* Icon */}
-                <div className={`relative z-10 p-4 rounded-xl ${colors.iconBg} border ${colors.border} group-hover:scale-110 transition-all duration-300`}>
-                  <IconComponent className={`w-8 h-8 ${colors.text} group-hover:drop-shadow-[0_0_20px_currentColor]`} />
+                <div className={`relative z-10 p-3 sm:p-4 rounded-xl ${colors.iconBg} border ${colors.border} group-hover:scale-110 transition-all duration-300 flex-shrink-0`}>
+                  <IconComponent className={`w-6 h-6 sm:w-8 sm:h-8 ${colors.text} group-hover:drop-shadow-[0_0_20px_currentColor]`} />
                 </div>
 
                 {/* Content */}
-                <div className="relative z-10 flex-1">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:bg-clip-text group-hover:from-purple-400 group-hover:to-cyan-400 transition-all duration-300">
+                <div className="relative z-10 flex-1 min-w-0">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-1 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:bg-clip-text group-hover:from-purple-400 group-hover:to-cyan-400 transition-all duration-300">
                     {contact.name}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300">
+                  <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300 truncate">
                     {contact.description}
                   </p>
                 </div>
 
                 {/* Arrow indicator */}
-                <div className="relative z-10 text-gray-400 dark:text-gray-500 group-hover:text-gray-900 dark:group-hover:text-white group-hover:translate-x-2 transition-all duration-300">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="relative z-10 text-gray-400 dark:text-gray-500 group-hover:text-gray-900 dark:group-hover:text-white group-hover:translate-x-2 transition-all duration-300 flex-shrink-0">
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </div>
@@ -174,16 +174,16 @@ export default function Contact() {
         {/* Footer text */}
         <div 
           ref={footerRef}
-          className="scroll-fade-up delay-700 text-center mt-16"
+          className="scroll-fade-up delay-700 text-center mt-12 sm:mt-16"
         >
-          <p className="text-gray-500 dark:text-gray-500 text-sm">
+          <p className="text-gray-500 dark:text-gray-500 text-xs sm:text-sm px-4">
             Disponível para projetos freelance e oportunidades full-time
           </p>
         </div>
 
         {/* Decorative elements */}
-        <div className="absolute left-1/4 top-1/4 w-64 h-64 bg-purple-500/10 dark:bg-purple-500/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div className="absolute right-1/4 bottom-1/4 w-64 h-64 bg-cyan-500/10 dark:bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute left-1/4 top-1/4 w-48 h-48 sm:w-64 sm:h-64 bg-purple-500/10 dark:bg-purple-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute right-1/4 bottom-1/4 w-48 h-48 sm:w-64 sm:h-64 bg-cyan-500/10 dark:bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
       </div>
     </section>
   );
