@@ -103,7 +103,7 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="relative py-32">
+    <section id="projects" className="relative py-16 md:py-24">
       <div className="relative z-10 max-w-7xl mx-auto px-4">
         {/* Header com animações */}
         <div className="text-center mb-16">

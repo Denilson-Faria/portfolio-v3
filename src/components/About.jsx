@@ -90,7 +90,7 @@ export default function About() {
     return (
         <section
             id="about"
-            className="relative isolate min-h-screen py-20"
+            className="relative isolate py-16 md:py-24"
         >
             <div className="relative z-10 max-w-5xl mx-auto px-4 w-full space-y-20">
 

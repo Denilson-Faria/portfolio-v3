@@ -108,7 +108,7 @@ export default function Contact() {
   const delayClasses = ['delay-300', 'delay-400', 'delay-500', 'delay-600'];
 
   return (
-    <section id="contact" className="relative py-32">
+    <section id="contact" className="relative py-16 md:py-24">
       <div className="relative z-10 max-w-6xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
