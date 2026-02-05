@@ -210,6 +210,7 @@ export const projectsData = {
       },
       
       links: {
+        demo: "https://dietron.netlify.app/", 
         github: "https://github.com/Denilson-Faria/diet-ai-frontend",
         githubBackend: "https://github.com/Denilson-Faria/diet-ai-backend"
       },
