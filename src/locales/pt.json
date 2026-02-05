@@ -1,0 +1,199 @@
+{
+  "nav": {
+    "about": "Sobre",
+    "formation": "Formação",
+    "skills": "Habilidades",
+    "projects": "Projetos",
+    "contact": "Contato"
+  },
+  "hero": {
+    "badge": "Disponível para projetos",
+    "greeting": "Olá, eu sou",
+    "firstName": "Denilson",
+    "lastName": "Faria",
+    "role": "Desenvolvedor Front-end",
+    "description": "Desenvolvo interfaces modernas e performáticas com",
+    "descriptionHighlight": "React",
+    "descriptionContinue": ", com foco em experiência do usuário, acessibilidade e código bem estruturado.",
+    "cta": {
+      "projects": "Ver Projetos",
+      "contact": "Entrar em Contato"
+    },
+    "scroll": "Scroll"
+  },
+  "about": {
+    "title": "Quem sou",
+    "titleHighlight": "eu",
+    "subtitle": "Desenvolvedor, criador de soluções e entusiasta de café ☕",
+    "intro": "Sou desenvolvedor porque acredito que",
+    "introHighlight": "tecnologia bem feita muda vidas",
+    "introContinue": ". Estudante de Análise e Desenvolvimento de Sistemas, hoje mergulho de cabeça no mundo front-end, criando experiências que fazem sentido.",
+    "secondParagraph": "Quando não estou codando, você vai me encontrar com um café na mão, pensando em como tornar interfaces mais intuitivas ou explorando novas tecnologias.",
+    "cards": {
+      "challenges": {
+        "title": "Movido por desafios",
+        "description": "Adoro transformar problemas complexos em soluções elegantes que realmente funcionam"
+      },
+      "knowledge": {
+        "title": "O que já sei",
+        "description": "React, TypeScript, JavaScript e todo dia aprendendo algo novo no universo dev"
+      },
+      "focus": {
+        "title": "Foco no que importa",
+        "description": "Código limpo, experiência intuitiva e projetos com propósito real"
+      }
+    },
+    "cta": "Ver Currículo Completo"
+  },
+  "projects": {
+    "sectionTitle": "Meus",
+    "sectionTitleHighlight": "Projetos",
+    "sectionDescription": "Seleção de projetos onde aplico boas práticas de front-end, foco em experiência do usuário e atenção aos detalhes",
+    "title": "Projetos em Destaque",
+    "subtitle": "Alguns dos meus trabalhos recentes",
+    "viewAll": "Ver Todos os Projetos",
+    "showLess": "Mostrar Menos",
+    "viewDetails": "Ver Detalhes",
+    "viewProject": "Ver Projeto",
+    "backToProjects": "Voltar para projetos",
+    "year": "Ano",
+    "type": "Tipo",
+    "liveDemo": "Ver Demo",
+    "sourceCode": "Ver Código",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "overview": "Visão Geral",
+    "problem": "Problema",
+    "solution": "Solução",
+    "result": "Resultado",
+    "features": "Funcionalidades",
+    "techStack": "Stack Técnico",
+    "challengesAndSolutions": "Desafios & Soluções",
+    "solutionLabel": "Solução",
+    "gallery": "Galeria",
+    "close": "Fechar",
+    "previous": "Anterior",
+    "next": "Próxima",
+    "metrics": "Métricas do Projeto",
+    "relatedProjects": "Projetos Relacionados"
+  },
+  "skills": {
+    "title": "Minhas",
+    "titleHighlight": "Skills",
+    "subtitle": "Tecnologias que domino",
+    "levels": {
+      "expertise": "Expertise",
+      "learning": "Aprendendo"
+    },
+    "categories": {
+      "react": {
+        "name": "React",
+        "description": "Principal framework"
+      },
+      "javascript": {
+        "name": "JavaScript",
+        "description": "Linguagem core"
+      },
+      "html5": {
+        "name": "HTML5",
+        "description": "Marcação"
+      },
+      "css3": {
+        "name": "CSS3",
+        "description": "Estilização"
+      },
+      "tailwind": {
+        "name": "Tailwind",
+        "description": "Utility-first"
+      },
+      "typescript": {
+        "name": "TypeScript",
+        "description": "Type safety"
+      },
+      "nextjs": {
+        "name": "Next.js",
+        "description": "React framework"
+      }
+    }
+  },
+  "contact": {
+    "title": "Vamos",
+    "titleHighlight": "Conversar?",
+    "subtitle": "Escolha o melhor canal para entrar em contato",
+    "availability": "Disponível para projetos freelance e oportunidades full-time",
+    "emailCopied": "✓ Copiado!",
+    "channels": {
+      "email": {
+        "name": "Email",
+        "description": "denilsonvictor2002@gmail.com"
+      },
+      "linkedin": {
+        "name": "LinkedIn",
+        "description": "Vamos conectar"
+      },
+      "github": {
+        "name": "GitHub",
+        "description": "Confira meus repositórios"
+      },
+      "whatsapp": {
+        "name": "WhatsApp",
+        "description": "Mande uma mensagem"
+      }
+    },
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "form": {
+      "name": "Nome",
+      "email": "Email",
+      "message": "Mensagem",
+      "send": "Enviar Mensagem",
+      "success": "Mensagem enviada com sucesso!",
+      "error": "Erro ao enviar mensagem. Tente novamente."
+    }
+  },
+  "formation": {
+    "title": "Formações",
+    "titleHighlight": "Acadêmicas",
+    "technical": "TÉCNICO",
+    "graduation": "GRADUAÇÃO",
+    "current": "ATUAL",
+    "courses": {
+      "systemsDevelopment": {
+        "title": "Desenvolvimento de Sistemas",
+        "institution": "Proz Educação",
+        "description": "Formação técnica focada em desenvolvimento de software, lógica de programação e construção de aplicações."
+      },
+      "systemsAnalysis": {
+        "title": "Análise e Desenvolvimento de Sistemas",
+        "institution": "Fasul Educacional",
+        "description": "Graduação tecnológica com foco em análise, desenvolvimento e arquitetura de sistemas modernos."
+      }
+    }
+  },
+  "footer": {
+    "role": "Desenvolvedor Front-end",
+    "navigation": "Navegação",
+    "social": "Social",
+    "rights": "Todos os direitos reservados.",
+    "madeWith": "Feito com",
+    "by": "por",
+    "sections": {
+      "about": "Sobre",
+      "formation": "Formação",
+      "skills": "Skills",
+      "projects": "Projetos",
+      "contact": "Contato"
+    }
+  },
+  "common": {
+    "loading": "Carregando...",
+    "error": "Erro",
+    "back": "Voltar",
+    "next": "Próximo",
+    "previous": "Anterior",
+    "close": "Fechar",
+    "readMore": "Ler Mais",
+    "showLess": "Mostrar Menos"
+  }
+}
