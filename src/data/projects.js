@@ -5,19 +5,19 @@ export const projectsData = {
       title: "Konnex Chat",
       tagline: "Aplicação de chat em tempo real com WebSockets",
       shortDescription: "WebSockets • Tempo Real • Auth Completa",
-      
+
       hero: {
         image: "/img/konnex-login.png",
         video: null,
         gradient: "from-blue-500 via-purple-500 to-pink-500"
       },
-      
+
       overview: {
         problem: "Comunicação fragmentada entre plataformas força usuários a gerenciar múltiplos apps. Aplicações de chat existentes ou são complexas demais, lentas, ou carecem de recursos essenciais como indicadores de presença e histórico persistente.",
         solution: "Sistema full-stack completo usando React no front-end, Node.js + Express no back-end, Socket.io para comunicação em tempo real e MongoDB para persistência de dados. Implementei autenticação JWT, status online/offline, histórico de mensagens e interface responsiva com feedback visual instantâneo.",
         result: "Aplicação de chat profissional com latência <100ms, mensagens instantâneas, autenticação segura, indicadores de presença em tempo real e suporte para 100+ usuários simultâneos."
       },
-      
+
       features: [
         {
           title: "Real-time Messaging",
@@ -50,7 +50,7 @@ export const projectsData = {
           icon: "✍️"
         }
       ],
-      
+
       technologies: [
         { name: "React", category: "Frontend" },
         { name: "Node.js", category: "Backend" },
@@ -61,7 +61,7 @@ export const projectsData = {
         { name: "Tailwind CSS", category: "Styling" },
         { name: "Bcrypt", category: "Security" }
       ],
-      
+
       challenges: [
         {
           title: "Sincronização em Tempo Real",
@@ -84,13 +84,13 @@ export const projectsData = {
           solution: "Virtualização de mensagens + paginação infinita + lazy loading de imagens e mídia. Apenas mensagens visíveis são renderizadas no DOM."
         }
       ],
-      
+
       gallery: [
         { image: "/img/konnex-chat.png", caption: "Interface principal do chat" },
         { image: "/img/konnex-SE.png", caption: "Modais de emojis e Stickers reais de memes BR" },
         { image: "/img/konnex-login.png", caption: "Tela de autenticação" },
       ],
-      
+
       metrics: {
         linesOfCode: "3500+",
         components: "20",
@@ -98,13 +98,13 @@ export const projectsData = {
         concurrentUsers: "100+",
         performance: "93/100"
       },
-      
+
       links: {
-  demo: "", // Temporariamente removido - em manutenção
-  githubFrontend: "https://github.com/Denilson-Faria/chat-app-frontend.git",
-  githubBackend: "https://github.com/Denilson-Faria/chat-app-backend.git",
-},
-      
+        // demo: "https://konnexapp.vercel.app/", // Temporariamente removido - em manutenção
+        github: "https://github.com/Denilson-Faria/chat-app-frontend.git",
+        githubBackend: "https://github.com/Denilson-Faria/chat-app-backend.git",
+      },
+
       year: "2025",
       category: "Full-Stack Application",
       badge: "💬 Real-time",
@@ -116,19 +116,19 @@ export const projectsData = {
       title: "Dietron AI",
       tagline: "Gerador inteligente de planos de dieta personalizados",
       shortDescription: "OpenAI • TypeScript • Next.js • Personalização",
-      
+
       hero: {
         image: "/img/dietron-forms.png",
         video: null,
         gradient: "from-green-500 to-emerald-600"
       },
-      
+
       overview: {
         problem: "Nutricionistas levam 2-3 horas para criar um plano semanal personalizado. Apps existentes usam templates genéricos que ignoram contexto cultural, disponibilidade de ingredientes locais e particularidades brasileiras como horários de refeições e alimentos regionais.",
         solution: "Aplicação full-stack usando Next.js e TypeScript no front-end, Node.js no back-end e integração com OpenAI GPT-4 para geração inteligente de dietas. Sistema de prompts em camadas otimizados que consideram dados antropométricos, TDEE calculado, intolerâncias, preferências e cultura alimentar brasileira.",
         result: "Plataforma profissional que gera dietas semanais completas em menos de 10 segundos, com ingredientes locais acessíveis, macros balanceados e 4.8/5 de satisfação dos usuários."
       },
-      
+
       features: [
         {
           title: "IA Generativa",
@@ -166,7 +166,7 @@ export const projectsData = {
           icon: "🛡️"
         }
       ],
-      
+
       technologies: [
         { name: "Next.js", category: "Framework" },
         { name: "TypeScript", category: "Language" },
@@ -176,7 +176,7 @@ export const projectsData = {
         { name: "Tailwind CSS", category: "Styling" },
         { name: "React", category: "Library" }
       ],
-      
+
       challenges: [
         {
           title: "Prompts Otimizados",
@@ -194,13 +194,13 @@ export const projectsData = {
           solution: "Interfaces TypeScript rigorosas e validação de schema com Zod nos retornos."
         }
       ],
-      
+
       gallery: [
         { image: "/img/dietron-forms.png", caption: "Formulário de entrada de dados" },
         { image: "/img/dietron-generate.png", caption: "Plano de dieta gerado" },
         { image: "/img/dietron-responsive.webp", caption: "Interface responsiva" }
       ],
-      
+
       metrics: {
         linesOfCode: "2800+",
         components: "12",
@@ -208,13 +208,13 @@ export const projectsData = {
         userSatisfaction: "4.8/5",
         performance: "94/100"
       },
-      
+
       links: {
-        demo: "https://dietron.netlify.app/", 
+        demo: "https://dietron.netlify.app/",
         github: "https://github.com/Denilson-Faria/diet-ai-frontend",
         githubBackend: "https://github.com/Denilson-Faria/diet-ai-backend"
       },
-      
+
       year: "2025",
       category: "Full-Stack AI Application",
       badge: "🤖 IA",
@@ -226,19 +226,19 @@ export const projectsData = {
       title: "ContabilEasy",
       tagline: "Dashboard financeiro client-side com visualização de dados",
       shortDescription: "Vanilla JS • Gráficos • Client-Side",
-      
+
       hero: {
         image: "/img/contabileasy.png",
         video: null,
         gradient: "from-purple-600 to-indigo-600"
       },
-      
+
       overview: {
         problem: "Ferramentas financeiras pessoais ou são pagas, complexas demais ou exigem cadastro em servidores. Usuários precisam de uma solução simples, offline-first e com visualizações claras para controle financeiro básico.",
         solution: "Dashboard 100% client-side desenvolvido com JavaScript puro (Vanilla JS), sem frameworks. Usa localStorage para persistência local, Charts.js para visualizações interativas e arquitetura modular com separação de responsabilidades. Sistema CRUD completo com validação de dados e cálculos automáticos.",
         result: "Aplicação leve (sem dependências pesadas), que funciona offline, carrega instantaneamente e mantém dados seguros no dispositivo do usuário. Interface intuitiva que transforma números em insights visuais acionáveis."
       },
-      
+
       features: [
         {
           title: "CRUD Completo",
@@ -271,7 +271,7 @@ export const projectsData = {
           icon: "💾"
         }
       ],
-      
+
       technologies: [
         { name: "JavaScript (Vanilla)", category: "Language" },
         { name: "HTML5", category: "Markup" },
@@ -280,7 +280,7 @@ export const projectsData = {
         { name: "LocalStorage API", category: "Storage" },
         { name: "ES6 Modules", category: "Architecture" }
       ],
-      
+
       challenges: [
         {
           title: "Sincronização Gráfico-Dados",
@@ -303,12 +303,12 @@ export const projectsData = {
           solution: "Lazy rendering de listas longas, virtualização simples para tabelas e limitação de pontos em gráficos (agregação mensal para períodos longos)."
         }
       ],
-      
+
       gallery: [
         { image: "/img/contabileasy.png", caption: "Dashboard principal com visão geral" },
         { image: "/img/relatorios-contabileasy.png", caption: "Gráficos de análise detalhada" }
       ],
-      
+
       metrics: {
         linesOfCode: "1800+",
         components: "8 módulos",
@@ -316,36 +316,36 @@ export const projectsData = {
         loadTime: "<0.8s",
         performance: "96/100"
       },
-      
+
       links: {
         demo: "https://contabileasy.vercel.app/",
         github: "https://github.com/Denilson-Faria/contabileasy"
       },
-      
+
       year: "2025",
       category: "Client-Side Dashboard",
       badge: "📊 Vanilla JS",
       accentColor: "purple"
     },
-    
+
     {
       id: 'iphone17',
       title: "iPhone17 Landing",
       tagline: "Landing page premium com animações scroll reveal",
       shortDescription: "Animações • Scroll Reveal • Interativo",
-      
+
       hero: {
         image: "/img/iphone.png",
         video: null,
         gradient: "from-cyan-500 to-blue-500"
       },
-      
+
       overview: {
         problem: "Landing pages de produtos premium precisam equilibrar wow-factor visual com carregamento instantâneo (<2s). Animações pesadas causam alta taxa de rejeição. Apple define padrão de design minimalista impossível de replicar sem sacrificar performance ou interatividade.",
         solution: "Landing page desenvolvida com React e Tailwind CSS, focando em animações scroll reveal sutis usando Intersection Observer API e GPU-accelerated transforms. Seletor de cores interativo com transições suaves, lazy loading de assets e critical CSS inline para First Contentful Paint otimizado.",
         result: "Experiência totalmente fluida mantendo 60fps constante, tempo de carregamento <1.5s, Lighthouse 98/100/100/100 e responsividade perfeita de 320px a 4K."
       },
-      
+
       features: [
         {
           title: "Scroll Reveal Animations",
@@ -373,7 +373,7 @@ export const projectsData = {
           icon: "✨"
         }
       ],
-      
+
       technologies: [
         { name: "React", category: "Framework" },
         { name: "Tailwind CSS", category: "Styling" },
@@ -381,7 +381,7 @@ export const projectsData = {
         { name: "Intersection Observer", category: "API" },
         { name: "CSS Animations", category: "Animation" }
       ],
-      
+
       challenges: [
         {
           title: "Performance das Animações",
@@ -394,14 +394,14 @@ export const projectsData = {
           solution: "Hierarquia visual clara com whitespace generoso e accent colors estratégicos."
         }
       ],
-      
+
       gallery: [
         { image: "/img/hero-product.png", caption: "Hero section com produto" },
         { image: "/img/iphone-seletor.png", caption: "Seletor de cores interativo" },
         { image: "/img/iphone-comparison.png", caption: "Comparação de modelos Apple" },
         { image: "/img/iphone-desempenho.png", caption: "Comparação de modelos Apple" },
       ],
-      
+
       metrics: {
         linesOfCode: "1200+",
         components: "8",
@@ -409,12 +409,12 @@ export const projectsData = {
         lighthouse: "98/100/100/100",
         performance: "98/100"
       },
-      
+
       links: {
         demo: "https://iphone17landing.vercel.app/",
         github: "https://github.com/Denilson-Faria/iPhone17Landing"
       },
-      
+
       year: "2025",
       category: "Landing Page",
       accentColor: "cyan"
@@ -425,19 +425,19 @@ export const projectsData = {
       title: "Netflix Clone",
       tagline: "Clone completo da Netflix com API real e 1000+ filmes",
       shortDescription: "API Real • 1000+ Filmes • Infinite Scroll",
-      
+
       hero: {
         image: "/img/netflix.jpg",
         video: null,
         gradient: "from-red-600 to-pink-600"
       },
-      
+
       overview: {
         problem: "Criar uma experiência de streaming que replique a interface premium da Netflix, com navegação fluida entre milhares de títulos, carregamento otimizado de imagens de alta resolução e busca instantânea sem comprometer performance.",
         solution: "Desenvolvido usando React com arquitetura componentizada (15+ componentes reutilizáveis) e integração com TMDB API para dados reais de 1000+ filmes/séries. Implementei carrosséis infinitos com virtualização, sistema de favoritos persistente com localStorage, modal de detalhes com trailers do YouTube e custom hooks para lógica compartilhada.",
         result: "Interface responsiva completa com 70% de cache hit rate, loading skeletons para perceived performance, busca funcional com debounce e experiência premium em qualquer dispositivo."
       },
-      
+
       features: [
         {
           title: "API Integration",
@@ -470,7 +470,7 @@ export const projectsData = {
           icon: "⚡"
         }
       ],
-      
+
       technologies: [
         { name: "React", category: "Framework" },
         { name: "Tailwind CSS", category: "Styling" },
@@ -480,7 +480,7 @@ export const projectsData = {
         { name: "Axios", category: "HTTP" },
         { name: "LocalStorage", category: "Storage" }
       ],
-      
+
       challenges: [
         {
           title: "Performance com Grande Volume",
@@ -503,13 +503,13 @@ export const projectsData = {
           solution: "Mobile-first approach com Tailwind, testando em múltiplos dispositivos reais."
         }
       ],
-      
+
       gallery: [
         { image: "/img/netflix.jpg", caption: "Página principal com carrosséis" },
         { image: "/img/modal-netflix.png", caption: "Modal de detalhes com trailer" },
         { image: "/img/busca-netflix.png", caption: "Sistema de busca" }
       ],
-      
+
       metrics: {
         linesOfCode: "2500+",
         components: "15",
@@ -517,12 +517,12 @@ export const projectsData = {
         cacheHitRate: "70%",
         performance: "95/100"
       },
-      
+
       links: {
         demo: "https://netflix-clone-df.vercel.app/",
         github: "https://github.com/Denilson-Faria/netflix-clone"
       },
-      
+
       year: "2025",
       category: "Web Application",
       accentColor: "red"
@@ -535,19 +535,19 @@ export const projectsData = {
       title: "Konnex Chat",
       tagline: "Real-time chat application with WebSockets",
       shortDescription: "WebSockets • Real-time • Full Auth",
-      
+
       hero: {
         image: "/img/konnex-login.png",
         video: null,
         gradient: "from-blue-500 via-purple-500 to-pink-500"
       },
-      
+
       overview: {
         problem: "Fragmented communication across platforms forces users to manage multiple apps. Existing chat applications are either too complex, slow, or lack essential features like presence indicators and persistent history.",
         solution: "Complete full-stack system using React on the frontend, Node.js + Express on the backend, Socket.io for real-time communication, and MongoDB for data persistence. I implemented JWT authentication, online/offline status, message history, and a responsive interface with instant visual feedback.",
         result: "Professional chat application with <100ms latency, instant messaging, secure authentication, real-time presence indicators, and support for 100+ simultaneous users."
       },
-      
+
       features: [
         {
           title: "Real-time Messaging",
@@ -580,7 +580,7 @@ export const projectsData = {
           icon: "✍️"
         }
       ],
-      
+
       technologies: [
         { name: "React", category: "Frontend" },
         { name: "Node.js", category: "Backend" },
@@ -591,7 +591,7 @@ export const projectsData = {
         { name: "Tailwind CSS", category: "Styling" },
         { name: "Bcrypt", category: "Security" }
       ],
-      
+
       challenges: [
         {
           title: "Real-time Synchronization",
@@ -614,13 +614,13 @@ export const projectsData = {
           solution: "Message virtualization + infinite pagination + lazy loading of images and media. Only visible messages are rendered in the DOM."
         }
       ],
-      
+
       gallery: [
         { image: "/img/konnex-chat.png", caption: "Main chat interface" },
         { image: "/img/konnex-SE.png", caption: "Emoji and real Brazilian meme stickers modals" },
         { image: "/img/konnex-login.png", caption: "Authentication screen" },
       ],
-      
+
       metrics: {
         linesOfCode: "3500+",
         components: "20",
@@ -628,13 +628,13 @@ export const projectsData = {
         concurrentUsers: "100+",
         performance: "93/100"
       },
-      
+
       links: {
-        demo: "https://konnexapp.vercel.app/", 
+        demo: "https://konnexapp.vercel.app/",
         githubFrontend: "https://github.com/Denilson-Faria/chat-app-frontend.git",
         githubBackend: "https://github.com/Denilson-Faria/chat-app-backend.git",
       },
-      
+
       year: "2025",
       category: "Full-Stack Application",
       badge: "💬 Real-time",
@@ -646,19 +646,19 @@ export const projectsData = {
       title: "Dietron AI",
       tagline: "Intelligent generator of personalized diet plans",
       shortDescription: "OpenAI • TypeScript • Next.js • Personalization",
-      
+
       hero: {
         image: "/img/dietron-forms.png",
         video: null,
         gradient: "from-green-500 to-emerald-600"
       },
-      
+
       overview: {
         problem: "Nutritionists take 2-3 hours to create a personalized weekly plan. Existing apps use generic templates that ignore cultural context, local ingredient availability, and Brazilian particularities like meal times and regional foods.",
         solution: "Full-stack application using Next.js and TypeScript on the frontend, Node.js on the backend, and OpenAI GPT-4 integration for intelligent diet generation. Optimized layered prompt system that considers anthropometric data, calculated TDEE, intolerances, preferences, and Brazilian food culture.",
         result: "Professional platform that generates complete weekly diets in less than 10 seconds, with accessible local ingredients, balanced macros, and 4.8/5 user satisfaction."
       },
-      
+
       features: [
         {
           title: "Generative AI",
@@ -696,7 +696,7 @@ export const projectsData = {
           icon: "🛡️"
         }
       ],
-      
+
       technologies: [
         { name: "Next.js", category: "Framework" },
         { name: "TypeScript", category: "Language" },
@@ -706,7 +706,7 @@ export const projectsData = {
         { name: "Tailwind CSS", category: "Styling" },
         { name: "React", category: "Library" }
       ],
-      
+
       challenges: [
         {
           title: "Optimized Prompts",
@@ -724,13 +724,13 @@ export const projectsData = {
           solution: "Rigorous TypeScript interfaces and Zod schema validation on returns."
         }
       ],
-      
+
       gallery: [
         { image: "/img/dietron-forms.png", caption: "Data input form" },
         { image: "/img/dietron-generate.png", caption: "Generated diet plan" },
         { image: "/img/dietron-responsive.webp", caption: "Responsive interface" }
       ],
-      
+
       metrics: {
         linesOfCode: "2800+",
         components: "12",
@@ -738,12 +738,12 @@ export const projectsData = {
         userSatisfaction: "4.8/5",
         performance: "94/100"
       },
-      
+
       links: {
         github: "https://github.com/Denilson-Faria/diet-ai-frontend",
         githubBackend: "https://github.com/Denilson-Faria/diet-ai-backend"
       },
-      
+
       year: "2025",
       category: "Full-Stack AI Application",
       badge: "🤖 AI",
@@ -755,19 +755,19 @@ export const projectsData = {
       title: "ContabilEasy",
       tagline: "Client-side financial dashboard with data visualization",
       shortDescription: "Vanilla JS • Charts • Client-Side",
-      
+
       hero: {
         image: "/img/contabileasy.png",
         video: null,
         gradient: "from-purple-600 to-indigo-600"
       },
-      
+
       overview: {
         problem: "Personal finance tools are either paid, too complex, or require registration on servers. Users need a simple, offline-first solution with clear visualizations for basic financial control.",
         solution: "100% client-side dashboard developed with pure JavaScript (Vanilla JS), no frameworks. Uses localStorage for local persistence, Charts.js for interactive visualizations, and modular architecture with separation of concerns. Complete CRUD system with data validation and automatic calculations.",
         result: "Lightweight application (no heavy dependencies) that works offline, loads instantly, and keeps user data secure on their device. Intuitive interface that transforms numbers into actionable visual insights."
       },
-      
+
       features: [
         {
           title: "Complete CRUD",
@@ -800,7 +800,7 @@ export const projectsData = {
           icon: "💾"
         }
       ],
-      
+
       technologies: [
         { name: "JavaScript (Vanilla)", category: "Language" },
         { name: "HTML5", category: "Markup" },
@@ -809,7 +809,7 @@ export const projectsData = {
         { name: "LocalStorage API", category: "Storage" },
         { name: "ES6 Modules", category: "Architecture" }
       ],
-      
+
       challenges: [
         {
           title: "Chart-Data Synchronization",
@@ -832,12 +832,12 @@ export const projectsData = {
           solution: "Lazy rendering of long lists, simple virtualization for tables, and chart point limitation (monthly aggregation for long periods)."
         }
       ],
-      
+
       gallery: [
         { image: "/img/contabileasy.png", caption: "Main dashboard with overview" },
         { image: "/img/relatorios-contabileasy.png", caption: "Detailed analysis charts" }
       ],
-      
+
       metrics: {
         linesOfCode: "1800+",
         components: "8 modules",
@@ -845,36 +845,36 @@ export const projectsData = {
         loadTime: "<0.8s",
         performance: "96/100"
       },
-      
+
       links: {
         demo: "https://contabileasy.vercel.app/",
         github: "https://github.com/Denilson-Faria/contabileasy"
       },
-      
+
       year: "2025",
       category: "Client-Side Dashboard",
       badge: "📊 Vanilla JS",
       accentColor: "purple"
     },
-    
+
     {
       id: 'iphone17',
       title: "iPhone17 Landing",
       tagline: "Premium landing page with scroll reveal animations",
       shortDescription: "Animations • Scroll Reveal • Interactive",
-      
+
       hero: {
         image: "/img/iphone.png",
         video: null,
         gradient: "from-cyan-500 to-blue-500"
       },
-      
+
       overview: {
         problem: "Premium product landing pages need to balance visual wow-factor with instant loading (<2s). Heavy animations cause high bounce rates. Apple sets a minimalist design standard impossible to replicate without sacrificing performance or interactivity.",
         solution: "Landing page developed with React and Tailwind CSS, focusing on subtle scroll reveal animations using Intersection Observer API and GPU-accelerated transforms. Interactive color selector with smooth transitions, lazy loading of assets, and inline critical CSS for optimized First Contentful Paint.",
         result: "Completely fluid experience maintaining constant 60fps, <1.5s load time, Lighthouse 98/100/100/100, and perfect responsiveness from 320px to 4K."
       },
-      
+
       features: [
         {
           title: "Scroll Reveal Animations",
@@ -902,7 +902,7 @@ export const projectsData = {
           icon: "✨"
         }
       ],
-      
+
       technologies: [
         { name: "React", category: "Framework" },
         { name: "Tailwind CSS", category: "Styling" },
@@ -910,7 +910,7 @@ export const projectsData = {
         { name: "Intersection Observer", category: "API" },
         { name: "CSS Animations", category: "Animation" }
       ],
-      
+
       challenges: [
         {
           title: "Animation Performance",
@@ -923,14 +923,14 @@ export const projectsData = {
           solution: "Clear visual hierarchy with generous whitespace and strategic accent colors."
         }
       ],
-      
+
       gallery: [
         { image: "/img/hero-product.png", caption: "Hero section with product" },
         { image: "/img/iphone-seletor.png", caption: "Interactive color selector" },
         { image: "/img/iphone-comparison.png", caption: "Apple model comparison" },
         { image: "/img/iphone-desempenho.png", caption: "Apple model comparison" },
       ],
-      
+
       metrics: {
         linesOfCode: "1200+",
         components: "8",
@@ -938,12 +938,12 @@ export const projectsData = {
         lighthouse: "98/100/100/100",
         performance: "98/100"
       },
-      
+
       links: {
         demo: "https://iphone17landing.vercel.app/",
         github: "https://github.com/Denilson-Faria/iPhone17Landing"
       },
-      
+
       year: "2025",
       category: "Landing Page",
       accentColor: "cyan"
@@ -954,19 +954,19 @@ export const projectsData = {
       title: "Netflix Clone",
       tagline: "Complete Netflix clone with real API and 1000+ movies",
       shortDescription: "Real API • 1000+ Movies • Infinite Scroll",
-      
+
       hero: {
         image: "/img/netflix.jpg",
         video: null,
         gradient: "from-red-600 to-pink-600"
       },
-      
+
       overview: {
         problem: "Creating a streaming experience that replicates Netflix's premium interface, with fluid navigation among thousands of titles, optimized loading of high-resolution images, and instant search without compromising performance.",
         solution: "Developed using React with componentized architecture (15+ reusable components) and TMDB API integration for real data from 1000+ movies/series. Implemented infinite carousels with virtualization, persistent favorites system with localStorage, details modal with YouTube trailers, and custom hooks for shared logic.",
         result: "Complete responsive interface with 70% cache hit rate, loading skeletons for perceived performance, functional search with debounce, and premium experience on any device."
       },
-      
+
       features: [
         {
           title: "API Integration",
@@ -999,7 +999,7 @@ export const projectsData = {
           icon: "⚡"
         }
       ],
-      
+
       technologies: [
         { name: "React", category: "Framework" },
         { name: "Tailwind CSS", category: "Styling" },
@@ -1009,7 +1009,7 @@ export const projectsData = {
         { name: "Axios", category: "HTTP" },
         { name: "LocalStorage", category: "Storage" }
       ],
-      
+
       challenges: [
         {
           title: "Large Volume Performance",
@@ -1032,13 +1032,13 @@ export const projectsData = {
           solution: "Mobile-first approach with Tailwind, testing on multiple real devices."
         }
       ],
-      
+
       gallery: [
         { image: "/img/netflix.jpg", caption: "Main page with carousels" },
         { image: "/img/modal-netflix.png", caption: "Details modal with trailer" },
         { image: "/img/busca-netflix.png", caption: "Search system" }
       ],
-      
+
       metrics: {
         linesOfCode: "2500+",
         components: "15",
@@ -1046,12 +1046,12 @@ export const projectsData = {
         cacheHitRate: "70%",
         performance: "95/100"
       },
-      
+
       links: {
         demo: "https://netflix-clone-df.vercel.app/",
         github: "https://github.com/Denilson-Faria/netflix-clone"
       },
-      
+
       year: "2025",
       category: "Web Application",
       accentColor: "red"
