@@ -100,11 +100,10 @@ export const projectsData = {
       },
       
       links: {
-        //demo: "https://konnexapp.vercel.app/",// 
-        
-        githubFrontend: "https://github.com/Denilson-Faria/chat-app-frontend.git",
-        githubBackend: "https://github.com/Denilson-Faria/chat-app-backend.git",
-      },
+  demo: "", // Temporariamente removido - em manutenção
+  githubFrontend: "https://github.com/Denilson-Faria/chat-app-frontend.git",
+  githubBackend: "https://github.com/Denilson-Faria/chat-app-backend.git",
+},
       
       year: "2025",
       category: "Full-Stack Application",
