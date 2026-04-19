@@ -9,23 +9,22 @@ export default function ProjectsGrid() {
   const { t } = useTranslation();
   const { language } = useLanguage();
   const [showAll, setShowAll] = useState(false);
-  
+
   const titleRef = useScrollAnimation();
   const descRef = useScrollAnimation();
 
   const allProjects = getAllProjects(language);
-  const visibleProjects = showAll ? allProjects : allProjects.slice(0, 3);
+  const visibleProjects = showAll ? allProjects : allProjects.slice(0, 4);
+
+  const [featured, ...rest] = visibleProjects;
 
   return (
     <section id="projects" className="relative py-20 md:py-32 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        
+
         {/* Header */}
         <div className="mb-16 md:mb-24">
-          <div 
-            ref={titleRef}
-            className="scroll-fade-up mb-6"
-          >
+          <div ref={titleRef} className="scroll-fade-up mb-6">
             <h2 className="text-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-black dark:text-white text-center">
               {t('projects.sectionTitle')}{' '}
               <span className="relative inline-block">
@@ -34,30 +33,36 @@ export default function ProjectsGrid() {
               </span>
             </h2>
           </div>
-          
-          <div 
-            ref={descRef}
-            className="scroll-fade-up delay-200"
-          >
+
+          <div ref={descRef} className="scroll-fade-up delay-200">
             <p className="text-body text-center text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
               {t('projects.sectionDescription')}
             </p>
           </div>
         </div>
 
-        {/* Projects Grid - Bento Style */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
-          {visibleProjects.map((project, index) => (
-            <ProjectCard 
-              key={project.id} 
-              project={project} 
-              index={index}
-            />
-          ))}
-        </div>
+        {/* Featured Card */}
+        {featured && (
+          <div className="mb-6 md:mb-8">
+            <FeaturedCard project={featured} t={t} />
+          </div>
+        )}
+
+        {/* Rest of projects grid */}
+        {rest.length > 0 && (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
+            {rest.map((project, index) => (
+              <ProjectCard
+                key={project.id}
+                project={project}
+                index={index + 1}
+              />
+            ))}
+          </div>
+        )}
 
         {/* Ver Todos Button */}
-        {allProjects.length > 3 && (
+        {allProjects.length > 4 && (
           <div className="text-center">
             <button
               onClick={() => setShowAll(!showAll)}
@@ -72,37 +77,111 @@ export default function ProjectsGrid() {
   );
 }
 
+function FeaturedCard({ project, t }) {
+  const cardRef = useScrollAnimation({ threshold: 0.1 });
+
+  const accentColors = {
+    red:    { bg: 'bg-red-500',    border: 'border-red-500',    text: 'text-red-500',    tagBg: 'bg-red-500' },
+    purple: { bg: 'bg-purple-600', border: 'border-purple-600', text: 'text-purple-600', tagBg: 'bg-purple-600' },
+    cyan:   { bg: 'bg-cyan-400',   border: 'border-cyan-400',   text: 'text-cyan-400',   tagBg: 'bg-cyan-400' },
+    indigo: { bg: 'bg-indigo-600', border: 'border-indigo-600', text: 'text-indigo-600', tagBg: 'bg-indigo-600' },
+  };
+
+  const colors = accentColors[project.accentColor] || accentColors.purple;
+
+  return (
+    <Link
+      to={`/project/${project.id}`}
+      ref={cardRef}
+      className="scroll-fade-up delay-300 group block hover:rotate-0 transition-all duration-300"
+    >
+      <article className="relative bg-white dark:bg-gray-900 border-4 border-black dark:border-white shadow-[8px_8px_0px_rgba(0,0,0,1)] dark:shadow-[8px_8px_0px_rgba(255,255,255,1)] group-hover:shadow-[4px_4px_0px_rgba(0,0,0,1)] dark:group-hover:shadow-[4px_4px_0px_rgba(255,255,255,1)] group-hover:translate-x-[4px] group-hover:translate-y-[4px] transition-all duration-200 overflow-hidden grid grid-cols-1 md:grid-cols-2">
+
+        {/* Image — left side */}
+        <div className="relative h-64 md:h-auto overflow-hidden border-b-4 md:border-b-0 md:border-r-4 border-black dark:border-white">
+          <img
+            src={project.hero.image}
+            alt={project.title}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent md:bg-gradient-to-r"></div>
+
+          {/* Badge */}
+          {project.badge && (
+            <div className={`absolute top-4 right-4 px-3 py-1.5 ${colors.tagBg} text-white border-2 border-black dark:border-white font-mono text-xs font-bold uppercase shadow-[3px_3px_0px_rgba(0,0,0,1)] dark:shadow-[3px_3px_0px_rgba(255,255,255,1)]`}>
+              {project.badge}
+            </div>
+          )}
+
+          {/* Featured label over image */}
+          <div className="absolute top-4 left-4 px-3 py-1.5 bg-yellow-400 text-black border-2 border-black font-mono text-xs font-bold uppercase shadow-[3px_3px_0px_rgba(0,0,0,1)]">
+            ★ {t('projects.featured') ?? 'Featured'}
+          </div>
+        </div>
+
+        {/* Content — right side */}
+        <div className="p-8 md:p-10 flex flex-col justify-between">
+          <div>
+            {/* Index label */}
+            <p className="font-mono text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-3">
+              #01 — {t('projects.featuredProject') ?? 'Projeto em destaque'}
+            </p>
+
+            {/* Title */}
+            <h3 className="text-display text-3xl md:text-4xl lg:text-5xl font-black text-black dark:text-white mb-3 group-hover:text-pink-500 transition-colors leading-tight">
+              {project.title}
+            </h3>
+
+            {/* Short description */}
+            <p className="font-mono text-xs uppercase tracking-wider text-gray-600 dark:text-gray-400 mb-4">
+              {project.shortDescription}
+            </p>
+
+            {/* Longer description if available */}
+            {project.description && (
+              <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed mb-6 line-clamp-3">
+                {project.description}
+              </p>
+            )}
+
+            {/* Tags — show more on featured */}
+            <div className="flex flex-wrap gap-2 mb-6">
+              {project.technologies.slice(0, 5).map((tech, idx) => (
+                <span
+                  key={idx}
+                  className="px-2 py-1 text-xs font-mono font-bold uppercase bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-700"
+                >
+                  {tech.name}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div className="flex items-center gap-2 text-sm font-mono font-bold uppercase text-black dark:text-white group-hover:text-cyan-400 transition-colors">
+            {t('projects.viewDetails')}
+            <span className="inline-block transition-transform group-hover:translate-x-2">→</span>
+          </div>
+        </div>
+
+        {/* Corner Accent */}
+        <div className={`absolute bottom-0 right-0 w-0 h-0 border-l-[60px] border-l-transparent border-b-[60px] ${colors.border} opacity-30`}></div>
+      </article>
+    </Link>
+  );
+}
+
 function ProjectCard({ project, index }) {
   const { t } = useTranslation();
   const cardRef = useScrollAnimation({ threshold: 0.1 });
   const delays = ['delay-300', 'delay-400', 'delay-500', 'delay-600', 'delay-700', 'delay-800'];
   const rotations = ['rotate-minus-1', 'rotate-1', 'rotate-minus-2', 'rotate-2', 'rotate-minus-1', 'rotate-1'];
-  
+
   const accentColors = {
-    red: {
-      bg: 'bg-red-500',
-      border: 'border-red-500',
-      text: 'text-red-500',
-      tagBg: 'bg-red-500'
-    },
-    purple: {
-      bg: 'bg-purple-600',
-      border: 'border-purple-600',
-      text: 'text-purple-600',
-      tagBg: 'bg-purple-600'
-    },
-    cyan: {
-      bg: 'bg-cyan-400',
-      border: 'border-cyan-400',
-      text: 'text-cyan-400',
-      tagBg: 'bg-cyan-400'
-    },
-    indigo: {
-      bg: 'bg-indigo-600',
-      border: 'border-indigo-600',
-      text: 'text-indigo-600',
-      tagBg: 'bg-indigo-600'
-    }
+    red:    { bg: 'bg-red-500',    border: 'border-red-500',    text: 'text-red-500',    tagBg: 'bg-red-500' },
+    purple: { bg: 'bg-purple-600', border: 'border-purple-600', text: 'text-purple-600', tagBg: 'bg-purple-600' },
+    cyan:   { bg: 'bg-cyan-400',   border: 'border-cyan-400',   text: 'text-cyan-400',   tagBg: 'bg-cyan-400' },
+    indigo: { bg: 'bg-indigo-600', border: 'border-indigo-600', text: 'text-indigo-600', tagBg: 'bg-indigo-600' },
   };
 
   const colors = accentColors[project.accentColor] || accentColors.purple;
@@ -114,18 +193,21 @@ function ProjectCard({ project, index }) {
       className={`scroll-fade-up ${delays[index % delays.length]} group block ${rotations[index % rotations.length]} hover:rotate-0 transition-all duration-300`}
     >
       <article className="relative h-full bg-white dark:bg-gray-900 border-4 border-black dark:border-white shadow-[8px_8px_0px_rgba(0,0,0,1)] dark:shadow-[8px_8px_0px_rgba(255,255,255,1)] group-hover:shadow-[4px_4px_0px_rgba(0,0,0,1)] dark:group-hover:shadow-[4px_4px_0px_rgba(255,255,255,1)] group-hover:translate-x-[4px] group-hover:translate-y-[4px] transition-all duration-200 overflow-hidden">
-        
+
         {/* Image Container */}
         <div className="relative h-56 md:h-64 overflow-hidden border-b-4 border-black dark:border-white">
-          <img 
+          <img
             src={project.hero.image}
             alt={project.title}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           />
-          
-          {/* Overlay Gradient */}
-          <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent`}></div>
-          
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+
+          {/* Index label */}
+          <div className="absolute bottom-3 left-3 font-mono text-xs font-bold uppercase tracking-widest text-white/60">
+            #{String(index + 1).padStart(2, '0')}
+          </div>
+
           {/* Badge */}
           {project.badge && (
             <div className={`absolute top-4 right-4 px-3 py-1.5 ${colors.tagBg} text-white border-2 border-black dark:border-white font-mono text-xs font-bold uppercase shadow-[3px_3px_0px_rgba(0,0,0,1)] dark:shadow-[3px_3px_0px_rgba(255,255,255,1)]`}>
@@ -136,20 +218,17 @@ function ProjectCard({ project, index }) {
 
         {/* Content */}
         <div className="p-6">
-          {/* Title */}
           <h3 className="text-display text-2xl md:text-3xl font-bold text-black dark:text-white mb-2 group-hover:text-pink-500 transition-colors">
             {project.title}
           </h3>
-          
-          {/* Short Description */}
+
           <p className="text-mono text-xs uppercase tracking-wider text-gray-600 dark:text-gray-400 mb-4">
             {project.shortDescription}
           </p>
-          
-          {/* Tags */}
+
           <div className="flex flex-wrap gap-2 mb-4">
             {project.technologies.slice(0, 3).map((tech, idx) => (
-              <span 
+              <span
                 key={idx}
                 className="px-2 py-1 text-xs font-mono font-bold uppercase bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-700"
               >
@@ -158,12 +237,9 @@ function ProjectCard({ project, index }) {
             ))}
           </div>
 
-          {/* CTA */}
           <div className="flex items-center gap-2 text-sm font-mono font-bold uppercase text-black dark:text-white group-hover:text-cyan-400 transition-colors">
             {t('projects.viewDetails')}
-            <span className="inline-block transition-transform group-hover:translate-x-2">
-              →
-            </span>
+            <span className="inline-block transition-transform group-hover:translate-x-2">→</span>
           </div>
         </div>
 

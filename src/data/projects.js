@@ -1,6 +1,126 @@
 export const projectsData = {
   pt: [
     {
+      id: 'contabileasy',
+      title: "ContabilEasy",
+      tagline: "Controle financeiro pessoal completo com React e Firebase",
+      shortDescription: "React • Firebase • PWA • Exportação PDF",
+
+      hero: {
+        image: "/img/dashboard.png",
+        video: null,
+        gradient: "from-emerald-500 to-teal-600"
+      },
+
+      overview: {
+        problem: "Aplicativos financeiros existentes ou são pagos, exigem cadastro em servidores externos ou não oferecem recursos avançados como metas, exportação de relatórios e acesso mobile nativo — frustrando quem quer controle real sem complexidade desnecessária.",
+        solution: "Plataforma full-stack com React no front-end e Firebase como backend (Firestore para banco de dados, Authentication para login). Autenticação JWT com login via Google e link mágico enviado por e-mail. PWA instalável com suporte offline. Exportação de dados em PDF personalizado e importação com conversão automática de CSV/XLSX. Sistema de metas financeiras, modo claro/escuro e dashboard interativo com gráficos em tempo real.",
+        result: "Aplicação production-ready com autenticação segura, dados sincronizados na nuvem, instalável como app no celular via PWA e com relatórios profissionais exportáveis em PDF — tudo em uma única plataforma gratuita."
+      },
+
+      features: [
+        {
+          title: "Autenticação Inteligente",
+          description: "Login via Google OAuth e link mágico enviado por e-mail — sem necessidade de senha. JWT gerenciado pelo Firebase Authentication com sessões persistentes e seguras.",
+          icon: "🔐"
+        },
+        {
+          title: "PWA — App no Celular",
+          description: "Instalável diretamente do navegador como aplicativo nativo no Android e iOS. Funciona offline com Service Worker e sincroniza ao reconectar.",
+          icon: "📱"
+        },
+        {
+          title: "Exportação PDF Personalizado",
+          description: "Geração de relatórios financeiros em PDF com layout profissional, filtros por período e categoria, gráficos e resumo de saldo.",
+          icon: "📄"
+        },
+        {
+          title: "Importação com Conversão Automática",
+          description: "Importe transações de outros apps ou planilhas em CSV e XLSX. O sistema detecta e converte automaticamente os campos para o padrão da plataforma.",
+          icon: "📥"
+        },
+        {
+          title: "Metas Financeiras",
+          description: "Crie e acompanhe metas de economia com progresso visual, prazo e valor-alvo. O dashboard mostra quanto falta para atingir cada objetivo.",
+          icon: "🎯"
+        },
+        {
+          title: "Dashboard em Tempo Real",
+          description: "Gráficos interativos de evolução de gastos, receitas por categoria e comparativos mensais — todos atualizados em tempo real via Firestore.",
+          icon: "📊"
+        },
+        {
+          title: "Modo Claro e Escuro",
+          description: "Alternância entre modo claro e escuro com preferência salva automaticamente. Interface adaptada para conforto visual em qualquer ambiente.",
+          icon: "🌙"
+        },
+        {
+          title: "Firebase Firestore",
+          description: "Dados sincronizados em tempo real na nuvem com Firestore. Cada usuário tem seus dados isolados com regras de segurança por UID.",
+          icon: "☁️"
+        }
+      ],
+
+      technologies: [
+        { name: "React", category: "Frontend" },
+        { name: "Firebase", category: "Backend" },
+        { name: "Firestore", category: "Database" },
+        { name: "Firebase Auth", category: "Auth" },
+        { name: "JWT", category: "Segurança" },
+        { name: "PWA", category: "Mobile" },
+        { name: "Tailwind CSS", category: "Styling" },
+        { name: "Charts.js", category: "Visualização" },
+        { name: "jsPDF", category: "Exportação" }
+      ],
+
+      challenges: [
+        {
+          title: "Login via Link no E-mail",
+          description: "Implementar autenticação sem senha usando link mágico com expiração e uso único.",
+          solution: "Firebase Authentication com signInWithEmailLink — o link é gerado com actionCodeSettings customizado e validado no retorno pelo domínio autorizado."
+        },
+        {
+          title: "PWA com Suporte Offline",
+          description: "Garantir que o app funcione sem conexão e sincronize ao reconectar sem conflitos de dados.",
+          solution: "Service Worker com estratégia Cache First para assets estáticos e Network First para dados do Firestore. Fila de operações offline com sync automático."
+        },
+        {
+          title: "Importação e Conversão de CSV",
+          description: "Arquivos de diferentes bancos e apps têm colunas e formatos variados, dificultando a importação direta.",
+          solution: "Parser customizado que detecta separador (vírgula ou ponto-e-vírgula), mapeia colunas por similaridade de nome e converte valores monetários com regex."
+        },
+        {
+          title: "Segurança por Usuário no Firestore",
+          description: "Garantir isolamento total de dados entre usuários sem expor informações de outros.",
+          solution: "Regras de segurança do Firestore baseadas em UID: cada documento só é acessível pelo usuário autenticado dono daquele recurso."
+        }
+      ],
+
+      gallery: [
+        { image: "/img/Extrato.png", caption: "Lançamento de transaçoes com categorias personalizaveis" },
+        { image: "/img/Analise.png", caption: "Análise detalhada com gráficos" }
+      ],
+
+      metrics: {
+        linesOfCode: "4500+",
+        components: "18",
+        loadTime: "<1.2s",
+        lighthouse: "94/100",
+        performance: "96/100"
+      },
+
+      links: {
+        demo: "https://contabileasyv2.vercel.app/",
+        github: "https://github.com/Denilson-Faria/contabileasy"
+      },
+
+      year: "2025",
+      category: "Full-Stack Application",
+      badge: "💰 Finance App",
+      accentColor: "cyan"
+    },
+
+    {
       id: 'konnex-chat',
       title: "Konnex Chat",
       tagline: "Aplicação de chat em tempo real com WebSockets",
@@ -100,7 +220,6 @@ export const projectsData = {
       },
 
       links: {
-        // demo: "https://konnexapp.vercel.app/", // Temporariamente removido - em manutenção
         github: "https://github.com/Denilson-Faria/chat-app-frontend.git",
         githubBackend: "https://github.com/Denilson-Faria/chat-app-backend.git",
       },
@@ -219,113 +338,6 @@ export const projectsData = {
       category: "Full-Stack AI Application",
       badge: "🤖 IA",
       accentColor: "cyan"
-    },
-
-    {
-      id: 'contabileasy',
-      title: "ContabilEasy",
-      tagline: "Dashboard financeiro client-side com visualização de dados",
-      shortDescription: "Vanilla JS • Gráficos • Client-Side",
-
-      hero: {
-        image: "/img/contabileasy.png",
-        video: null,
-        gradient: "from-purple-600 to-indigo-600"
-      },
-
-      overview: {
-        problem: "Ferramentas financeiras pessoais ou são pagas, complexas demais ou exigem cadastro em servidores. Usuários precisam de uma solução simples, offline-first e com visualizações claras para controle financeiro básico.",
-        solution: "Dashboard 100% client-side desenvolvido com JavaScript puro (Vanilla JS), sem frameworks. Usa localStorage para persistência local, Charts.js para visualizações interativas e arquitetura modular com separação de responsabilidades. Sistema CRUD completo com validação de dados e cálculos automáticos.",
-        result: "Aplicação leve (sem dependências pesadas), que funciona offline, carrega instantaneamente e mantém dados seguros no dispositivo do usuário. Interface intuitiva que transforma números em insights visuais acionáveis."
-      },
-
-      features: [
-        {
-          title: "CRUD Completo",
-          description: "Sistema robusto para criar, ler, atualizar e deletar transações com validação de dados, confirmação antes de deletar e feedback visual em tempo real",
-          icon: "📝"
-        },
-        {
-          title: "Gráficos Interativos",
-          description: "Charts.js responsivos com 6 tipos de visualização: linha, barra, pizza, doughnut e comparativos. Tooltips informativos e cores categorizadas",
-          icon: "📊"
-        },
-        {
-          title: "Gestão Financeira",
-          description: "Controle inteligente de receitas e despesas com cálculos automáticos de saldo, totais por categoria e projeções baseadas em média mensal",
-          icon: "💰"
-        },
-        {
-          title: "Categorização Smart",
-          description: "10+ categorias pré-definidas (alimentação, transporte, saúde, etc.) com ícones e cores únicas para organização visual rápida",
-          icon: "🏷️"
-        },
-        {
-          title: "Filtros Avançados",
-          description: "Filtros por período (dia/semana/mês/ano), categoria específica e tipo (receita/despesa) com atualização instantânea dos gráficos",
-          icon: "🔍"
-        },
-        {
-          title: "Persistência Local",
-          description: "Dados salvos localmente com localStorage, sincronização automática a cada mudança e sistema de backup/restauração manual",
-          icon: "💾"
-        }
-      ],
-
-      technologies: [
-        { name: "JavaScript (Vanilla)", category: "Language" },
-        { name: "HTML5", category: "Markup" },
-        { name: "CSS3", category: "Styling" },
-        { name: "Charts.js", category: "Visualization" },
-        { name: "LocalStorage API", category: "Storage" },
-        { name: "ES6 Modules", category: "Architecture" }
-      ],
-
-      challenges: [
-        {
-          title: "Sincronização Gráfico-Dados",
-          description: "Manter múltiplos gráficos sincronizados instantaneamente com cada mudança nos dados sem causar re-renders desnecessários.",
-          solution: "Implementei Observer Pattern customizado com event bus para propagar mudanças apenas para componentes afetados. Debounce em filtros para otimizar performance."
-        },
-        {
-          title: "Arquitetura Sem Framework",
-          description: "Estruturar código escalável e manutenível usando apenas Vanilla JS, sem React/Vue.",
-          solution: "Módulos ES6 com separação clara (controllers, models, views), factory functions para componentes e encapsulamento com closures."
-        },
-        {
-          title: "Validação Client-Side",
-          description: "Garantir integridade dos dados sem validação de backend.",
-          solution: "Sistema robusto de validação em camadas: tipo de dados, ranges numéricos, datas válidas e sanitização de inputs. Try-catch para operações com localStorage."
-        },
-        {
-          title: "Performance com Volume",
-          description: "Manter app responsivo mesmo com centenas de transações acumuladas.",
-          solution: "Lazy rendering de listas longas, virtualização simples para tabelas e limitação de pontos em gráficos (agregação mensal para períodos longos)."
-        }
-      ],
-
-      gallery: [
-        { image: "/img/contabileasy.png", caption: "Dashboard principal com visão geral" },
-        { image: "/img/relatorios-contabileasy.png", caption: "Gráficos de análise detalhada" }
-      ],
-
-      metrics: {
-        linesOfCode: "1800+",
-        components: "8 módulos",
-        bundleSize: "<100KB",
-        loadTime: "<0.8s",
-        performance: "96/100"
-      },
-
-      links: {
-        demo: "https://contabileasy.vercel.app/",
-        github: "https://github.com/Denilson-Faria/contabileasy"
-      },
-
-      year: "2025",
-      category: "Client-Side Dashboard",
-      badge: "📊 Vanilla JS",
-      accentColor: "purple"
     },
 
     {
@@ -531,6 +543,126 @@ export const projectsData = {
 
   en: [
     {
+      id: 'contabileasy',
+      title: "ContabilEasy",
+      tagline: "Complete personal finance app built with React and Firebase",
+      shortDescription: "React • Firebase • PWA • PDF Export",
+
+      hero: {
+        image: "/img/contabileasy.png",
+        video: null,
+        gradient: "from-emerald-500 to-teal-600"
+      },
+
+      overview: {
+        problem: "Existing finance apps are either paid, require registration on external servers, or lack advanced features like financial goals, report exports, and native mobile access — frustrating users who want real control without unnecessary complexity.",
+        solution: "Full-stack platform with React on the frontend and Firebase as backend (Firestore for database, Authentication for login). JWT authentication with Google login and magic link sent via email. Installable PWA with offline support. Export data as custom PDF and import with automatic CSV/XLSX conversion. Financial goals system, dark/light mode, and interactive dashboard with real-time charts.",
+        result: "Production-ready application with secure authentication, cloud-synced data, installable as a mobile app via PWA, and professional PDF reports — all in one free platform."
+      },
+
+      features: [
+        {
+          title: "Smart Authentication",
+          description: "Login via Google OAuth and magic link sent by email — no password needed. JWT managed by Firebase Authentication with persistent and secure sessions.",
+          icon: "🔐"
+        },
+        {
+          title: "PWA — Mobile App",
+          description: "Installable directly from the browser as a native app on Android and iOS. Works offline with Service Worker and syncs on reconnect.",
+          icon: "📱"
+        },
+        {
+          title: "Custom PDF Export",
+          description: "Generate financial reports in PDF with professional layout, filters by period and category, charts, and balance summary.",
+          icon: "📄"
+        },
+        {
+          title: "Import with Auto-conversion",
+          description: "Import transactions from other apps or spreadsheets in CSV and XLSX. The system automatically detects and converts fields to the platform standard.",
+          icon: "📥"
+        },
+        {
+          title: "Financial Goals",
+          description: "Create and track savings goals with visual progress, deadline, and target value. The dashboard shows how much is left to reach each goal.",
+          icon: "🎯"
+        },
+        {
+          title: "Real-time Dashboard",
+          description: "Interactive charts of spending evolution, income by category, and monthly comparisons — all updated in real time via Firestore.",
+          icon: "📊"
+        },
+        {
+          title: "Dark and Light Mode",
+          description: "Toggle between light and dark mode with preference saved automatically. Interface adapted for visual comfort in any environment.",
+          icon: "🌙"
+        },
+        {
+          title: "Firebase Firestore",
+          description: "Data synced in real time to the cloud with Firestore. Each user's data is isolated with UID-based security rules.",
+          icon: "☁️"
+        }
+      ],
+
+      technologies: [
+        { name: "React", category: "Frontend" },
+        { name: "Firebase", category: "Backend" },
+        { name: "Firestore", category: "Database" },
+        { name: "Firebase Auth", category: "Auth" },
+        { name: "JWT", category: "Security" },
+        { name: "PWA", category: "Mobile" },
+        { name: "Tailwind CSS", category: "Styling" },
+        { name: "Charts.js", category: "Visualization" },
+        { name: "jsPDF", category: "Export" }
+      ],
+
+      challenges: [
+        {
+          title: "Magic Link Login",
+          description: "Implement passwordless authentication using a magic link with expiration and single use.",
+          solution: "Firebase Authentication with signInWithEmailLink — the link is generated with custom actionCodeSettings and validated on return by the authorized domain."
+        },
+        {
+          title: "PWA with Offline Support",
+          description: "Ensure the app works without connection and syncs on reconnect without data conflicts.",
+          solution: "Service Worker with Cache First strategy for static assets and Network First for Firestore data. Offline operations queue with automatic sync."
+        },
+        {
+          title: "CSV Import and Conversion",
+          description: "Files from different banks and apps have varied columns and formats, making direct import difficult.",
+          solution: "Custom parser that detects separator (comma or semicolon), maps columns by name similarity, and converts monetary values with regex."
+        },
+        {
+          title: "Per-user Firestore Security",
+          description: "Ensure complete data isolation between users without exposing others' information.",
+          solution: "Firestore security rules based on UID: each document is only accessible by the authenticated user who owns that resource."
+        }
+      ],
+
+      gallery: [
+        { image: "/img/contabileasy.png", caption: "Main dashboard with overview" },
+        { image: "/img/relatorios-contabileasy.png", caption: "Detailed analysis with charts" }
+      ],
+
+      metrics: {
+        linesOfCode: "4500+",
+        components: "18",
+        loadTime: "<1.2s",
+        lighthouse: "94/100",
+        performance: "96/100"
+      },
+
+      links: {
+        demo: "https://contabileasyv2.vercel.app/",
+        github: "https://github.com/Denilson-Faria/contabileasy"
+      },
+
+      year: "2025",
+      category: "Full-Stack Application",
+      badge: "💰 Finance App",
+      accentColor: "cyan"
+    },
+
+    {
       id: 'konnex-chat',
       title: "Konnex Chat",
       tagline: "Real-time chat application with WebSockets",
@@ -630,8 +762,7 @@ export const projectsData = {
       },
 
       links: {
-        demo: "https://konnexapp.vercel.app/",
-        githubFrontend: "https://github.com/Denilson-Faria/chat-app-frontend.git",
+        github: "https://github.com/Denilson-Faria/chat-app-frontend.git",
         githubBackend: "https://github.com/Denilson-Faria/chat-app-backend.git",
       },
 
@@ -740,6 +871,7 @@ export const projectsData = {
       },
 
       links: {
+        demo: "https://dietron.netlify.app/",
         github: "https://github.com/Denilson-Faria/diet-ai-frontend",
         githubBackend: "https://github.com/Denilson-Faria/diet-ai-backend"
       },
@@ -748,113 +880,6 @@ export const projectsData = {
       category: "Full-Stack AI Application",
       badge: "🤖 AI",
       accentColor: "cyan"
-    },
-
-    {
-      id: 'contabileasy',
-      title: "ContabilEasy",
-      tagline: "Client-side financial dashboard with data visualization",
-      shortDescription: "Vanilla JS • Charts • Client-Side",
-
-      hero: {
-        image: "/img/contabileasy.png",
-        video: null,
-        gradient: "from-purple-600 to-indigo-600"
-      },
-
-      overview: {
-        problem: "Personal finance tools are either paid, too complex, or require registration on servers. Users need a simple, offline-first solution with clear visualizations for basic financial control.",
-        solution: "100% client-side dashboard developed with pure JavaScript (Vanilla JS), no frameworks. Uses localStorage for local persistence, Charts.js for interactive visualizations, and modular architecture with separation of concerns. Complete CRUD system with data validation and automatic calculations.",
-        result: "Lightweight application (no heavy dependencies) that works offline, loads instantly, and keeps user data secure on their device. Intuitive interface that transforms numbers into actionable visual insights."
-      },
-
-      features: [
-        {
-          title: "Complete CRUD",
-          description: "Robust system to create, read, update, and delete transactions with data validation, delete confirmation, and real-time visual feedback",
-          icon: "📝"
-        },
-        {
-          title: "Interactive Charts",
-          description: "Responsive Charts.js with 6 visualization types: line, bar, pie, doughnut, and comparisons. Informative tooltips and categorized colors",
-          icon: "📊"
-        },
-        {
-          title: "Financial Management",
-          description: "Intelligent income and expense control with automatic balance calculations, category totals, and projections based on monthly averages",
-          icon: "💰"
-        },
-        {
-          title: "Smart Categorization",
-          description: "10+ predefined categories (food, transport, health, etc.) with unique icons and colors for quick visual organization",
-          icon: "🏷️"
-        },
-        {
-          title: "Advanced Filters",
-          description: "Filters by period (day/week/month/year), specific category, and type (income/expense) with instant chart updates",
-          icon: "🔍"
-        },
-        {
-          title: "Local Persistence",
-          description: "Data saved locally with localStorage, automatic sync on every change, and manual backup/restore system",
-          icon: "💾"
-        }
-      ],
-
-      technologies: [
-        { name: "JavaScript (Vanilla)", category: "Language" },
-        { name: "HTML5", category: "Markup" },
-        { name: "CSS3", category: "Styling" },
-        { name: "Charts.js", category: "Visualization" },
-        { name: "LocalStorage API", category: "Storage" },
-        { name: "ES6 Modules", category: "Architecture" }
-      ],
-
-      challenges: [
-        {
-          title: "Chart-Data Synchronization",
-          description: "Keeping multiple charts instantly synchronized with every data change without causing unnecessary re-renders.",
-          solution: "Implemented custom Observer Pattern with event bus to propagate changes only to affected components. Debounce on filters to optimize performance."
-        },
-        {
-          title: "Framework-less Architecture",
-          description: "Structuring scalable and maintainable code using only Vanilla JS, without React/Vue.",
-          solution: "ES6 modules with clear separation (controllers, models, views), factory functions for components, and encapsulation with closures."
-        },
-        {
-          title: "Client-Side Validation",
-          description: "Ensuring data integrity without backend validation.",
-          solution: "Robust layered validation system: data types, numeric ranges, valid dates, and input sanitization. Try-catch for localStorage operations."
-        },
-        {
-          title: "Volume Performance",
-          description: "Keeping app responsive even with hundreds of accumulated transactions.",
-          solution: "Lazy rendering of long lists, simple virtualization for tables, and chart point limitation (monthly aggregation for long periods)."
-        }
-      ],
-
-      gallery: [
-        { image: "/img/contabileasy.png", caption: "Main dashboard with overview" },
-        { image: "/img/relatorios-contabileasy.png", caption: "Detailed analysis charts" }
-      ],
-
-      metrics: {
-        linesOfCode: "1800+",
-        components: "8 modules",
-        bundleSize: "<100KB",
-        loadTime: "<0.8s",
-        performance: "96/100"
-      },
-
-      links: {
-        demo: "https://contabileasy.vercel.app/",
-        github: "https://github.com/Denilson-Faria/contabileasy"
-      },
-
-      year: "2025",
-      category: "Client-Side Dashboard",
-      badge: "📊 Vanilla JS",
-      accentColor: "purple"
     },
 
     {
